@@ -487,6 +487,8 @@ public class LoginPage extends javax.swing.JFrame {
         Color borderColor = new Color(101,43,215);
         password1.setText("");
         password1.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        password1.setForeground(borderColor);
+        
     }//GEN-LAST:event_passwordMouseClicked
 
     private void usernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameMouseClicked
@@ -494,6 +496,7 @@ public class LoginPage extends javax.swing.JFrame {
         Color borderColor = new Color(101,43,215);
         username1.setText("");
         username1.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        username1.setForeground(borderColor);
     }//GEN-LAST:event_usernameMouseClicked
 
     private void nameusernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nameusernameMouseClicked
@@ -501,6 +504,7 @@ public class LoginPage extends javax.swing.JFrame {
         Color borderColor = new Color(101,43,215);
         name.setText("");
         name.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        name.setForeground(borderColor);
     }//GEN-LAST:event_nameusernameMouseClicked
 
     private void usernameRegistrationpasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameRegistrationpasswordMouseClicked
@@ -508,6 +512,7 @@ public class LoginPage extends javax.swing.JFrame {
         Color borderColor = new Color(101,43,215);
         usernameRegistration.setText("");
         usernameRegistration.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        usernameRegistration.setForeground(borderColor);
     }//GEN-LAST:event_usernameRegistrationpasswordMouseClicked
 
     private void usernameRegistrationpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameRegistrationpasswordActionPerformed
@@ -523,6 +528,7 @@ public class LoginPage extends javax.swing.JFrame {
         Color borderColor = new Color(101,43,215);
         email.setText("");
         email.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        email.setForeground(borderColor);
     }//GEN-LAST:event_emailpasswordMouseClicked
 
     private void emailpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailpasswordActionPerformed
@@ -534,6 +540,7 @@ public class LoginPage extends javax.swing.JFrame {
         Color borderColor = new Color(101,43,215);
         password_registartion.setText("");
         password_registartion.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        password_registartion.setForeground(borderColor);
     }//GEN-LAST:event_password_registartionpasswordMouseClicked
 
     private void password_registartionpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_registartionpasswordActionPerformed
@@ -606,18 +613,15 @@ public class LoginPage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField email;
     private javax.swing.JLabel exit;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
@@ -626,10 +630,8 @@ public class LoginPage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JLabel min;
     private javax.swing.JTextField name;
-    private javax.swing.JTextField password;
     private javax.swing.JTextField password1;
     private javax.swing.JTextField password_registartion;
-    private javax.swing.JTextField username;
     private javax.swing.JTextField username1;
     private javax.swing.JTextField usernameRegistration;
     // End of variables declaration//GEN-END:variables
