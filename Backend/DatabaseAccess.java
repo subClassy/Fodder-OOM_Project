@@ -1,7 +1,9 @@
 package Backend;
 
 import CustomErrors.InternalServerException;
+import CustomErrors.UserDoesNotExist;
 import CustomErrors.UsernameExistsException;
+import CustomErrors.WrongCredentialsException;
 
 import java.sql.*;
 
@@ -55,15 +57,26 @@ public class DatabaseAccess {
         }
     }
 
-    public static void main(String[] args) {
+    public Customer loginUser(String username, String password) throws UserDoesNotExist, InternalServerException, WrongCredentialsException {
+        if (!userExists(username)) {
+            throw new UserDoesNotExist();
+        }
+
         try {
-            DatabaseAccess access = new DatabaseAccess();
-            System.out.println(access.userExists("test"));
-            System.out.println(access.userExists("toast"));
-            Customer newCustomer = access.registerUser("mojo jojo", "jojoland", "mojo@jojo.com");
-            System.out.println(newCustomer);
-        } catch (Exception e) {
-            System.out.println(e);
+            PreparedStatement loginQuery = connect.prepareStatement("SELECT * FROM users WHERE USERNAME=?");
+            loginQuery.setString(1, username);
+            ResultSet result = loginQuery.executeQuery();
+            result.first();
+            String dbPassword = result.getString("PASSWORD");
+            String email = result.getString("EMAIL");
+
+            if (dbPassword.equals(password)) {
+                return new Customer(username, email);
+            } else {
+                throw new WrongCredentialsException();
+            }
+        } catch (SQLException e) {
+            throw new InternalServerException();
         }
     }
 }
