@@ -1,12 +1,16 @@
+package Backend;
+
 import CustomErrors.InternalServerException;
+import CustomErrors.UsernameExistsException;
+
 import java.sql.*;
 
 public class DatabaseAccess {
-    private Connection connect = null;
-    private Statement statement = null;
     private final String databaseName = "fodder";
     private final String user = "root";
     private final String password = "root";
+    private Connection connect = null;
+    private Statement statement = null;
 
     DatabaseAccess() throws Exception {
         try {
@@ -33,11 +37,31 @@ public class DatabaseAccess {
         }
     }
 
+    public Customer registerUser(String username, String password, String email) throws InternalServerException, UsernameExistsException {
+        if (userExists(username)) {
+            throw new UsernameExistsException();
+        }
+
+        try {
+            PreparedStatement insertUser = connect.prepareStatement("INSERT INTO users (USERNAME, EMAIL, PASSWORD) VALUES (?, ?, ?)");
+            insertUser.setString(1, username);
+            insertUser.setString(2, password);
+            insertUser.setString(3, email);
+            insertUser.executeUpdate();
+
+            return new Customer(username, email);
+        } catch (SQLException e) {
+            throw new InternalServerException();
+        }
+    }
+
     public static void main(String[] args) {
         try {
             DatabaseAccess access = new DatabaseAccess();
             System.out.println(access.userExists("test"));
             System.out.println(access.userExists("toast"));
+            Customer newCustomer = access.registerUser("mojo jojo", "jojoland", "mojo@jojo.com");
+            System.out.println(newCustomer);
         } catch (Exception e) {
             System.out.println(e);
         }
