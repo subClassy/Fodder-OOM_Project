@@ -3,3 +3,5 @@
 /GUI/Fodder/dist/
 .idea/
 *.class
+/GUI/JavaApplication3/nbproject/private/
+/GUI/JavaApplication3/build/
