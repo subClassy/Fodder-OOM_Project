@@ -66,12 +66,23 @@ public class LoginPage extends javax.swing.JFrame {
     /**
      * Creates new form LoginPage
      */
-    
-    private Point initialClick;
     public LoginPage() {
-        
-        Color borderColor = new Color(179, 193, 193);
         initComponents();
+        try {   
+            InputStream is = LoginPage.class.getResourceAsStream("cac_champagne.ttf");
+            Font cac_champagne = Font.createFont(Font.TRUETYPE_FONT, is);
+            jLabel1.setFont(cac_champagne.deriveFont(Font.PLAIN, 48f)); // NOI18N
+            jLabel1.setForeground(new java.awt.Color(239, 239, 239));
+            jLabel1.setText("fodder");
+            is = LoginPage.class.getResourceAsStream("DAGGERSQUARE.otf");
+            Font DAGGERSQUARE = Font.createFont(Font.TRUETYPE_FONT, is);
+            jLabel5.setFont(DAGGERSQUARE.deriveFont(Font.PLAIN, 36f)); // NOI18N
+            jLabel5.setForeground(new java.awt.Color(101, 43, 215));
+            jLabel5.setText("Login");
+        } catch(IOException | FontFormatException e) {
+            System.out.println("Font not found");
+        }
+        Color borderColor = new Color(179, 193, 193);
         jPanel1.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, Color.WHITE));
         username1.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
         password1.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
@@ -95,7 +106,7 @@ public class LoginPage extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         exit = new javax.swing.JLabel();
         min = new javax.swing.JLabel();
-        JPanel MotionPanel = new MotionPanel(this);
+        MotionPanel = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -152,7 +163,9 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
 
+        JPanel MotionPanel = new MotionPanel(this);
         MotionPanel.setBackground(new java.awt.Color(101, 43, 215));
+
         javax.swing.GroupLayout MotionPanelLayout = new javax.swing.GroupLayout(MotionPanel);
         MotionPanel.setLayout(MotionPanelLayout);
         MotionPanelLayout.setHorizontalGroup(
@@ -236,7 +249,7 @@ public class LoginPage extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(101, 43, 215));
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(239, 239, 239));
-        jButton2.setText("login");
+        jButton2.setText("Login");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -420,21 +433,21 @@ public class LoginPage extends javax.swing.JFrame {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 349, Short.MAX_VALUE)
+            .addGap(0, 435, Short.MAX_VALUE)
             .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel8Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap()
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 52, Short.MAX_VALUE)
+            .addGap(0, 74, Short.MAX_VALUE)
             .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel8Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         jPanel7.add(jPanel8, "registerLabel");
@@ -461,7 +474,7 @@ public class LoginPage extends javax.swing.JFrame {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 349, Short.MAX_VALUE)
+            .addGap(0, 435, Short.MAX_VALUE)
             .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel9Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -470,7 +483,7 @@ public class LoginPage extends javax.swing.JFrame {
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 52, Short.MAX_VALUE)
+            .addGap(0, 74, Short.MAX_VALUE)
             .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel9Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -486,10 +499,12 @@ public class LoginPage extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(117, 117, 117)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(124, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -666,25 +681,6 @@ public class LoginPage extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
-//        try {
-//        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-//        ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("cac_champagne.ttf")));
-//        } 
-//        catch (IOException|FontFormatException e) {
-//            System.out.println("Font not found");
-//        }
-        
-        try {   
-            InputStream is = LoginPage.class.getResourceAsStream("cac_champagne.ttf");
-            Font cac_champagne = Font.createFont(Font.TRUETYPE_FONT, is);
-            is = LoginPage.class.getResourceAsStream("DAGGERSQUARE.otf");
-            Font DAGGERSQUARE = Font.createFont(Font.TRUETYPE_FONT, is);
-        } catch(IOException | FontFormatException e) {
-            System.out.println("Font not found");
-        }
-        
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
