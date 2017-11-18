@@ -1,6 +1,7 @@
+package Backend;
 import java.util.ArrayList;
 
-class Order {
+public class Order {
     private ArrayList<FoodItem> orderList;
 
     Order() {
@@ -37,40 +38,6 @@ class Order {
     }
 }
 
-class FoodItem {
-    private int price, quantity;
-    private String name;
-
-// Init Block 
-    {
-        this.quantity = 0;
-    }
-
-// Constructor
-    FoodItem(String name, int price) {
-        this.name = name;
-        this.price = price;
-    }
-
-// Getter Methods
-    public String getName() {
-        return name;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-// Setter Methods
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-}
-
 class FastFood extends FoodItem {
     
     FastFood(String name, int price) {
@@ -103,14 +70,5 @@ class GujratiFood extends FoodItem {
     
     GujratiFood(String name, int price) {
         super(name, price);
-    }
-}
-
-public class BuildOrder {
-    public static void main(String[] args) {
-        Order order  = new Order();
-        for (FoodItem item : order.getOrderList()) {
-            System.out.println(item.getName() + " " + item.getPrice() + " " + item.getQuantity());
-        }
     }
 }
