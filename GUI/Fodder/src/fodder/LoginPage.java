@@ -11,21 +11,63 @@ import java.awt.Container;
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.GraphicsEnvironment;
+import java.awt.Point;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  *
  * @author Himank Goel
  */
+class MotionPanel extends JPanel{
+    private Point initialClick;
+    private JFrame parent;
+
+    public MotionPanel(final JFrame parent){
+    this.parent = parent;
+
+    addMouseListener(new MouseAdapter() {
+        public void mousePressed(MouseEvent e) {
+            initialClick = e.getPoint();
+            getComponentAt(initialClick);
+        }
+    });
+
+    addMouseMotionListener(new MouseMotionAdapter() {
+        @Override
+        public void mouseDragged(MouseEvent e) {
+
+            // get location of Window
+            int thisX = parent.getLocation().x;
+            int thisY = parent.getLocation().y;
+
+            // Determine how much the mouse moved since the initial click
+            int xMoved = (thisX + e.getX()) - (thisX + initialClick.x);
+            int yMoved = (thisY + e.getY()) - (thisY + initialClick.y);
+
+            // Move window to this position
+            int X = thisX + xMoved;
+            int Y = thisY + yMoved;
+            parent.setLocation(X, Y);
+        }
+    });
+    }
+}
+
 public class LoginPage extends javax.swing.JFrame {
 
     /**
      * Creates new form LoginPage
      */
+    
+    private Point initialClick;
     public LoginPage() {
         
         Color borderColor = new Color(179, 193, 193);
@@ -53,6 +95,7 @@ public class LoginPage extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         exit = new javax.swing.JLabel();
         min = new javax.swing.JLabel();
+        JPanel MotionPanel = new MotionPanel(this);
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -109,6 +152,18 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
 
+        MotionPanel.setBackground(new java.awt.Color(101, 43, 215));
+        javax.swing.GroupLayout MotionPanelLayout = new javax.swing.GroupLayout(MotionPanel);
+        MotionPanel.setLayout(MotionPanelLayout);
+        MotionPanelLayout.setHorizontalGroup(
+            MotionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        MotionPanelLayout.setVerticalGroup(
+            MotionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 13, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -121,11 +176,16 @@ public class LoginPage extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(exit)
                 .addGap(20, 20, 20))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(MotionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addComponent(MotionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(exit)
@@ -614,7 +674,7 @@ public class LoginPage extends javax.swing.JFrame {
 //        catch (IOException|FontFormatException e) {
 //            System.out.println("Font not found");
 //        }
-
+        
         try {   
             InputStream is = LoginPage.class.getResourceAsStream("cac_champagne.ttf");
             Font cac_champagne = Font.createFont(Font.TRUETYPE_FONT, is);
@@ -634,6 +694,7 @@ public class LoginPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel MotionPanel;
     private javax.swing.JTextField email;
     private javax.swing.JLabel exit;
     private javax.swing.JButton jButton2;
