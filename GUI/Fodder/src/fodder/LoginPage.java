@@ -5,6 +5,12 @@
  */
 package fodder;
 
+import Backend.*;
+import CustomErrors.InternalServerException;
+import CustomErrors.UserDoesNotExist;
+import CustomErrors.UsernameExistsException;
+import CustomErrors.WrongCredentialsException;
+
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -18,6 +24,8 @@ import java.awt.event.MouseMotionAdapter;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -62,11 +70,12 @@ class MotionPanel extends JPanel{
 }
 
 public class LoginPage extends javax.swing.JFrame {
-
+    DatabaseAccess db = new DatabaseAccess();
+    Customer customer;
     /**
      * Creates new form LoginPage
      */
-    public LoginPage() {
+    public LoginPage() throws Exception {
         initComponents();
         try {   
             InputStream is = LoginPage.class.getResourceAsStream("cac_champagne.ttf");
@@ -555,7 +564,12 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_exitMouseExited
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        try {
+            customer = db.loginUser(username1.getText(), password1.getText());
+            System.out.println(customer.getEmail());
+        } catch (WrongCredentialsException | UserDoesNotExist | InternalServerException e) {
+            System.out.println(e);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
@@ -600,7 +614,13 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameRegistrationpasswordActionPerformed
 
     private void jButton3jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3jButton1ActionPerformed
-        // TODO add your handling code here:
+        try {
+            customer = db.registerUser(usernameRegistration.getText(), 
+                    password_registartion.getText(), email.getText());
+            System.out.println(customer.getEmail());
+        } catch (InternalServerException | UsernameExistsException ex) {
+            System.out.println(ex);
+        }
     }//GEN-LAST:event_jButton3jButton1ActionPerformed
 
     private void emailpasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emailpasswordMouseClicked
@@ -684,7 +704,11 @@ public class LoginPage extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginPage().setVisible(true);
+                try {
+                    new LoginPage().setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

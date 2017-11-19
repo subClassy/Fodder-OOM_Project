@@ -14,7 +14,7 @@ public class DatabaseAccess {
     private Connection connect = null;
     private Statement statement = null;
 
-    DatabaseAccess() throws Exception {
+    public DatabaseAccess() throws Exception {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             connect = DriverManager.getConnection("jdbc:mysql://localhost/" + databaseName + "?user=" +

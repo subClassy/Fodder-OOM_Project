@@ -5,6 +5,7 @@
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
             <name>Fodder</name>
             <source-roots>
+                <root id="src.Fodder-OOM_Project.dir"/>
                 <root id="src.dir"/>
             </source-roots>
             <test-roots>
