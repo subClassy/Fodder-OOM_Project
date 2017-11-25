@@ -290,7 +290,6 @@
                     <Property name="text" type="java.lang.String" value="Home Delivery"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="homeDeliveryMouseClicked"/>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="homeDeliveryActionPerformed"/>
                   </Events>
                 </Component>
@@ -313,11 +312,11 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="dineIn1" min="-2" pref="115" max="-2" attributes="0"/>
+                          <Component id="debitCard" min="-2" pref="115" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="homeDelivery1" min="-2" pref="115" max="-2" attributes="0"/>
+                          <Component id="creditCard" min="-2" pref="115" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="homeDelivery2" min="-2" pref="115" max="-2" attributes="0"/>
+                          <Component id="cod" min="-2" pref="115" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -327,9 +326,9 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="dineIn1" alignment="3" pref="33" max="32767" attributes="0"/>
-                              <Component id="homeDelivery1" alignment="3" pref="33" max="32767" attributes="0"/>
-                              <Component id="homeDelivery2" alignment="3" pref="33" max="32767" attributes="0"/>
+                              <Component id="debitCard" alignment="3" pref="33" max="32767" attributes="0"/>
+                              <Component id="creditCard" alignment="3" pref="33" max="32767" attributes="0"/>
+                              <Component id="cod" alignment="3" pref="33" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -337,7 +336,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="dineIn1">
+                <Component class="javax.swing.JButton" name="debitCard">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="d7" green="2b" red="65" type="rgb"/>
@@ -351,11 +350,11 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="dineIn1MouseClicked"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dineIn1ActionPerformed"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="debitCardMouseClicked"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="debitCardActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="homeDelivery1">
+                <Component class="javax.swing.JButton" name="creditCard">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="d7" green="2b" red="65" type="rgb"/>
@@ -366,10 +365,10 @@
                     <Property name="text" type="java.lang.String" value="Credit Card"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="homeDelivery1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="creditCardActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="homeDelivery2">
+                <Component class="javax.swing.JButton" name="cod">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="d7" green="2b" red="65" type="rgb"/>
@@ -380,7 +379,7 @@
                     <Property name="text" type="java.lang.String" value="COD"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="homeDelivery2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="codActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

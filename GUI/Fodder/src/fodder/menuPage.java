@@ -1963,14 +1963,12 @@ public class menuPage extends javax.swing.JFrame {
         cart.add((Integer) jSpinner25.getValue());
         
         customer.updateCart(cart);
-        
-        System.out.println(customer.getTotalPrice());
-        System.out.println(customer.getTax());
-        System.out.println(customer.getTaxedPrice());
-        
-        for (FoodItem item : customer.getCart()) {
-            System.out.println(item.getName() + " " + item.getPrice() + " " + item.getQuantity());
-        }
+        this.dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new PaymentPage(customer).setVisible(true);
+            }
+        });
     }//GEN-LAST:event_proceedToPayMouseClicked
 
     /**

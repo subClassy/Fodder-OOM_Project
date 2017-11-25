@@ -53,7 +53,7 @@ public class Customer {
         return ((double) totalPrice + (0.18 * totalPrice));
     }
     
-    public double getTax() {
-        return 0.18 * getTotalPrice();
+    public String getTax() {
+        return String.format("%.2f", 0.18 * getTotalPrice());
     }
 }

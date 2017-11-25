@@ -5,6 +5,8 @@
  */
 package fodder;
 
+import Backend.Customer;
+import Backend.FoodItem;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.util.Random;
@@ -16,13 +18,30 @@ import javax.swing.JPanel;
  * @author Himank Goel
  */
 public class PaymentPage extends javax.swing.JFrame {
-
+    Customer customer;
+    
     /**
      * Creates new form PaymentPage
      */
-    public PaymentPage() {
+    public PaymentPage(Customer customer) {
+        this.customer = customer;
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        jTextArea1.append("\t          Order\n");
+        
+        for (FoodItem item : customer.getCart()) {
+            int totalPrice = item.getPrice() * item.getQuantity();
+            jTextArea1.append(item.getName() + "  : " + item.getQuantity() + " pcs  : Rs." + totalPrice + "\n");
+        }
+        
+        jTextArea1.append("\n");
+        for (int i = 0; i < 54; i++) {
+            jTextArea1.append("-");
+        }
+        
+        jTextArea1.append("\n\nPrice\n\nTotal Price : Rs." + customer.getTotalPrice() 
+                + "\nTax (GST 18%) : Rs." + customer.getTax() + "\nTotal Amount : Rs." + customer.getTaxedPrice());
     }
 
     /**
@@ -47,9 +66,9 @@ public class PaymentPage extends javax.swing.JFrame {
         dineIn = new javax.swing.JButton();
         homeDelivery = new javax.swing.JButton();
         deliveryChoices = new javax.swing.JPanel();
-        dineIn1 = new javax.swing.JButton();
-        homeDelivery1 = new javax.swing.JButton();
-        homeDelivery2 = new javax.swing.JButton();
+        debitCard = new javax.swing.JButton();
+        creditCard = new javax.swing.JButton();
+        cod = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -161,11 +180,6 @@ public class PaymentPage extends javax.swing.JFrame {
         homeDelivery.setBackground(new java.awt.Color(101, 43, 215));
         homeDelivery.setForeground(new java.awt.Color(239, 239, 239));
         homeDelivery.setText("Home Delivery");
-        homeDelivery.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                homeDeliveryMouseClicked(evt);
-            }
-        });
         homeDelivery.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 homeDeliveryActionPerformed(evt);
@@ -197,36 +211,36 @@ public class PaymentPage extends javax.swing.JFrame {
 
         deliveryChoices.setBackground(new java.awt.Color(239, 239, 239));
 
-        dineIn1.setBackground(new java.awt.Color(101, 43, 215));
-        dineIn1.setForeground(new java.awt.Color(239, 239, 239));
-        dineIn1.setText("Debit Card");
-        dineIn1.setPreferredSize(new java.awt.Dimension(115, 25));
-        dineIn1.addMouseListener(new java.awt.event.MouseAdapter() {
+        debitCard.setBackground(new java.awt.Color(101, 43, 215));
+        debitCard.setForeground(new java.awt.Color(239, 239, 239));
+        debitCard.setText("Debit Card");
+        debitCard.setPreferredSize(new java.awt.Dimension(115, 25));
+        debitCard.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                dineIn1MouseClicked(evt);
+                debitCardMouseClicked(evt);
             }
         });
-        dineIn1.addActionListener(new java.awt.event.ActionListener() {
+        debitCard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dineIn1ActionPerformed(evt);
-            }
-        });
-
-        homeDelivery1.setBackground(new java.awt.Color(101, 43, 215));
-        homeDelivery1.setForeground(new java.awt.Color(239, 239, 239));
-        homeDelivery1.setText("Credit Card");
-        homeDelivery1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                homeDelivery1ActionPerformed(evt);
+                debitCardActionPerformed(evt);
             }
         });
 
-        homeDelivery2.setBackground(new java.awt.Color(101, 43, 215));
-        homeDelivery2.setForeground(new java.awt.Color(239, 239, 239));
-        homeDelivery2.setText("COD");
-        homeDelivery2.addActionListener(new java.awt.event.ActionListener() {
+        creditCard.setBackground(new java.awt.Color(101, 43, 215));
+        creditCard.setForeground(new java.awt.Color(239, 239, 239));
+        creditCard.setText("Credit Card");
+        creditCard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                homeDelivery2ActionPerformed(evt);
+                creditCardActionPerformed(evt);
+            }
+        });
+
+        cod.setBackground(new java.awt.Color(101, 43, 215));
+        cod.setForeground(new java.awt.Color(239, 239, 239));
+        cod.setText("COD");
+        cod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                codActionPerformed(evt);
             }
         });
 
@@ -236,11 +250,11 @@ public class PaymentPage extends javax.swing.JFrame {
             deliveryChoicesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(deliveryChoicesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(dineIn1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(debitCard, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(homeDelivery1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(creditCard, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(homeDelivery2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cod, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         deliveryChoicesLayout.setVerticalGroup(
@@ -248,9 +262,9 @@ public class PaymentPage extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, deliveryChoicesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(deliveryChoicesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dineIn1, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
-                    .addComponent(homeDelivery1, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
-                    .addComponent(homeDelivery2, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE))
+                    .addComponent(debitCard, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                    .addComponent(creditCard, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                    .addComponent(cod, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -323,84 +337,81 @@ public class PaymentPage extends javax.swing.JFrame {
 
     private void homeDeliveryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeDeliveryActionPerformed
         // TODO add your handling code here:
+        CardLayout c1 = (CardLayout) jPanel3.getLayout();
+        c1.show(jPanel3, "deliveryCard");
     }//GEN-LAST:event_homeDeliveryActionPerformed
 
     private void dineInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dineInMouseClicked
         // TODO add your handling code here:
         Random r = new Random( System.currentTimeMillis() );
         int a = 10000 + r.nextInt(20000);
-        jTextArea1.setText("Your order has been recieved by us" + "\n" + "Your token number is " + a);
+        jTextArea1.setText("Your order has been recieved by us" + "\n" + "Your token number is " + a + "\n\nHappy Dining");
         dineIn.setEnabled(false);
         homeDelivery.setEnabled(false);
     }//GEN-LAST:event_dineInMouseClicked
 
-    private void dineIn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dineIn1MouseClicked
+    private void debitCardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_debitCardMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_dineIn1MouseClicked
+    }//GEN-LAST:event_debitCardMouseClicked
 
-    private void dineIn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dineIn1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dineIn1ActionPerformed
+    private void debitCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_debitCardActionPerformed
+        jTextArea1.setText("Used saved Debit Card : \nCard Number: XXXX XXXX XXXX 0514\nAccount Holder's name: " + customer.getName());
+    }//GEN-LAST:event_debitCardActionPerformed
 
-    private void homeDelivery1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeDelivery1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_homeDelivery1ActionPerformed
+    private void creditCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creditCardActionPerformed
+        jTextArea1.setText("Used saved Credit Card : \nCard Number: XXXX XXXX XXXX 0514\nAccount Holder's name: " + customer.getName());
+    }//GEN-LAST:event_creditCardActionPerformed
 
-    private void homeDelivery2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeDelivery2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_homeDelivery2ActionPerformed
-
-    private void homeDeliveryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeDeliveryMouseClicked
-        // TODO add your handling code here:
-        CardLayout c1 = (CardLayout) jPanel3.getLayout();
-        c1.show(jPanel3, "deliveryCard");
-    }//GEN-LAST:event_homeDeliveryMouseClicked
+    private void codActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codActionPerformed
+        jTextArea1.setText("Your order is on it's way.\nAn invoice has been sent to your registered email address.\nEmail: " + customer.getEmail() 
+                + "\n\nPlease show it to the delivery boy");
+    }//GEN-LAST:event_codActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PaymentPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PaymentPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PaymentPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PaymentPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PaymentPage().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(PaymentPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(PaymentPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(PaymentPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(PaymentPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new PaymentPage().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MotionPanel;
+    private javax.swing.JButton cod;
+    private javax.swing.JButton creditCard;
+    private javax.swing.JButton debitCard;
     private javax.swing.JPanel deliveryChoices;
     private javax.swing.JButton dineIn;
-    private javax.swing.JButton dineIn1;
     private javax.swing.JLabel exit;
     private javax.swing.JPanel firstChoice;
     private javax.swing.JButton homeDelivery;
-    private javax.swing.JButton homeDelivery1;
-    private javax.swing.JButton homeDelivery2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
