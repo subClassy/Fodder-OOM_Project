@@ -30,6 +30,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -579,12 +580,12 @@ public class LoginPage extends javax.swing.JFrame {
 //        try {
 //            customer = db.loginUser(username1.getText(), password1.getText());
 //            System.out.println(customer.getEmail());
-              password1.setText("");
-              username1.setText("");
-              this.dispose();
-              new menuPage(customer).setVisible(true);  
-//            } catch (WrongCredentialsException | UserDoesNotExist | InternalServerException e) {
-//            System.out.println(e);
+            password1.setText("");
+            username1.setText("");
+            this.dispose();
+            new menuPage(customer).setVisible(true); 
+//        } catch (WrongCredentialsException | UserDoesNotExist | InternalServerException e) {
+//            JOptionPane.showMessageDialog(rootPane, e, "Oops! There was an error", JOptionPane.ERROR_MESSAGE);
 //        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -630,18 +631,17 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameRegistrationpasswordActionPerformed
 
     private void jButton3jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3jButton1ActionPerformed
-//        try {
-                
-//            customer = db.registerUser(usernameRegistration.getText(), 
+//        try {   
+//          customer = db.registerUser(usernameRegistration.getText(), 
 //                    password_registartion.getText(), email.getText());
-//            System.out.println(customer.getEmail());
-              name.setText("");
-              usernameRegistration.setText("");
-              email.setText("");
-              password_registartion.setText("");
-              hi.setText("    Successfully Registered !");
-//            } catch (InternalServerException | UsernameExistsException ex) {
-//            System.out.println(ex);
+//          System.out.println(customer.getEmail());
+            name.setText("");
+            usernameRegistration.setText("");
+            email.setText("");
+            password_registartion.setText("");
+            hi.setText("    Successfully Registered !");
+//        } catch (InternalServerException | UsernameExistsException e) {
+//            JOptionPane.showMessageDialog(rootPane, e, "Oops! There was an error", JOptionPane.ERROR_MESSAGE);
 //        }
     }//GEN-LAST:event_jButton3jButton1ActionPerformed
 
