@@ -99,8 +99,13 @@ public class LoginPage extends javax.swing.JFrame {
         jPanel1.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, Color.WHITE));
         username1.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
         password1.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        password1.setEchoChar((char)0);
+        password1.setText("Password");
         usernameRegistration.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
         password_registartion.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        password_registartion.setEchoChar((char)0);
+        password_registartion.setText("Password");
+                
         name.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
         email.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
         this.setLocationRelativeTo(null);
@@ -126,16 +131,16 @@ public class LoginPage extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         username1 = new javax.swing.JTextField();
-        password1 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
+        password1 = new javax.swing.JPasswordField();
         jPanel6 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
         usernameRegistration = new javax.swing.JTextField();
         email = new javax.swing.JTextField();
-        password_registartion = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         hi = new javax.swing.JLabel();
+        password_registartion = new javax.swing.JPasswordField();
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -238,6 +243,11 @@ public class LoginPage extends javax.swing.JFrame {
         username1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         username1.setText("Username");
         username1.setBorder(null);
+        username1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                username1FocusLost(evt);
+            }
+        });
         username1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 usernameMouseClicked(evt);
@@ -246,20 +256,9 @@ public class LoginPage extends javax.swing.JFrame {
                 username1MouseEntered(evt);
             }
         });
-
-        password1.setBackground(new java.awt.Color(239, 239, 239));
-        password1.setForeground(new java.awt.Color(179, 193, 193));
-        password1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        password1.setText("Password");
-        password1.setBorder(null);
-        password1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                passwordMouseClicked(evt);
-            }
-        });
-        password1.addActionListener(new java.awt.event.ActionListener() {
+        username1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordActionPerformed(evt);
+                username1ActionPerformed(evt);
             }
         });
 
@@ -273,6 +272,23 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
 
+        password1.setBackground(new java.awt.Color(239, 239, 239));
+        password1.setForeground(new java.awt.Color(179, 193, 193));
+        password1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        password1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                password1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                password1FocusLost(evt);
+            }
+        });
+        password1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                password1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -283,14 +299,14 @@ public class LoginPage extends javax.swing.JFrame {
                         .addGap(132, 132, 132)
                         .addComponent(jLabel5))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(password1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(username1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(130, 130, 130)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(90, Short.MAX_VALUE))
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(username1, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                            .addComponent(password1))))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -299,9 +315,9 @@ public class LoginPage extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addGap(48, 48, 48)
                 .addComponent(username1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(password1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(password1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60))
         );
@@ -319,6 +335,11 @@ public class LoginPage extends javax.swing.JFrame {
         name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         name.setText("Name");
         name.setBorder(null);
+        name.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                nameFocusLost(evt);
+            }
+        });
         name.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 nameusernameMouseClicked(evt);
@@ -335,6 +356,14 @@ public class LoginPage extends javax.swing.JFrame {
         usernameRegistration.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         usernameRegistration.setText("Username");
         usernameRegistration.setBorder(null);
+        usernameRegistration.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                usernameRegistrationFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                usernameRegistrationFocusLost(evt);
+            }
+        });
         usernameRegistration.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 usernameRegistrationpasswordMouseClicked(evt);
@@ -351,6 +380,14 @@ public class LoginPage extends javax.swing.JFrame {
         email.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         email.setText("Email");
         email.setBorder(null);
+        email.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                emailFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                emailFocusLost(evt);
+            }
+        });
         email.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 emailpasswordMouseClicked(evt);
@@ -359,22 +396,6 @@ public class LoginPage extends javax.swing.JFrame {
         email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailpasswordActionPerformed(evt);
-            }
-        });
-
-        password_registartion.setBackground(new java.awt.Color(239, 239, 239));
-        password_registartion.setForeground(new java.awt.Color(179, 193, 193));
-        password_registartion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        password_registartion.setText("Password");
-        password_registartion.setBorder(null);
-        password_registartion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                password_registartionpasswordMouseClicked(evt);
-            }
-        });
-        password_registartion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                password_registartionpasswordActionPerformed(evt);
             }
         });
 
@@ -390,14 +411,27 @@ public class LoginPage extends javax.swing.JFrame {
 
         hi.setForeground(new java.awt.Color(51, 51, 255));
 
+        password_registartion.setBackground(new java.awt.Color(239, 239, 239));
+        password_registartion.setForeground(new java.awt.Color(179, 193, 193));
+        password_registartion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        password_registartion.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                password_registartionFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                password_registartionFocusLost(evt);
+            }
+        });
+        password_registartion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                password_registartionActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(120, 120, 120))
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
@@ -407,12 +441,16 @@ public class LoginPage extends javax.swing.JFrame {
                         .addGap(90, 90, 90)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(hi, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(usernameRegistration, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
-                                .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
-                                .addComponent(email, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
-                                .addComponent(password_registartion, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)))))
-                .addContainerGap(52, Short.MAX_VALUE))
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(password_registartion, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(usernameRegistration, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                                .addComponent(name, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                                .addComponent(email, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)))))
+                .addContainerGap(68, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(120, 120, 120))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -426,8 +464,8 @@ public class LoginPage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(password_registartion, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(password_registartion, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(hi, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
@@ -590,22 +628,10 @@ public class LoginPage extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passwordActionPerformed
-
-    private void passwordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passwordMouseClicked
-        // TODO add your handling code here:
-        Color borderColor = new Color(101,43,215);
-        password1.setText("");
-        password1.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
-        password1.setForeground(borderColor);
-        
-    }//GEN-LAST:event_passwordMouseClicked
-
     private void usernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameMouseClicked
         // TODO add your handling code here:
         Color borderColor = new Color(101,43,215);
+        if(username1.getText().equals("Username"))
         username1.setText("");
         username1.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
         username1.setForeground(borderColor);
@@ -658,18 +684,6 @@ public class LoginPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_emailpasswordActionPerformed
 
-    private void password_registartionpasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_password_registartionpasswordMouseClicked
-        // TODO add your handling code here:
-        Color borderColor = new Color(101,43,215);
-        password_registartion.setText("");
-        password_registartion.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
-        password_registartion.setForeground(borderColor);
-    }//GEN-LAST:event_password_registartionpasswordMouseClicked
-
-    private void password_registartionpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_registartionpasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_password_registartionpasswordActionPerformed
-
     private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameActionPerformed
@@ -698,6 +712,131 @@ public class LoginPage extends javax.swing.JFrame {
         c2.show(jPanel4, "loginCard");
     }//GEN-LAST:event_jLabel3MouseClicked
 
+    private void username1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_username1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_username1ActionPerformed
+
+    private void username1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_username1FocusLost
+        // TODO add your handling code here:
+        if(username1.getText().isEmpty()){
+            username1.setText("Username");
+            username1.setForeground(new Color(179,193,193));
+            username1.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, new Color(179,193,193)));
+            
+        }
+    }//GEN-LAST:event_username1FocusLost
+
+    private void password1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password1ActionPerformed
+        // TODO add your handling code here:
+        Color borderColor = new Color(101,43,215);
+        if(password1.getPassword().equals("Password"))
+        password1.setText("");
+        password1.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 0, borderColor));
+        password1.setForeground(borderColor);
+
+    }//GEN-LAST:event_password1ActionPerformed
+    
+    private void password1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_password1FocusLost
+        if(password1.getPassword().length==0){
+            password1.setText("Password");
+            password1.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, new Color(179,193,193)));
+            password1.setForeground(new Color(179,193,193));
+            password1.setEchoChar((char)0);
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_password1FocusLost
+
+    private void password1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_password1FocusGained
+        
+            Color borderColor = new Color(101,43,215);
+            password1.setText("");
+            password1.setEchoChar('*');
+            password1.setForeground(borderColor);
+            password1.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        
+// TODO add your handling code here:
+    }//GEN-LAST:event_password1FocusGained
+                           
+
+    private void nameFocusGained(java.awt.event.FocusEvent evt) {                                      
+        
+            Color borderColor = new Color(101,43,215);
+            name.setText("");
+            name.setForeground(borderColor);
+            name.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        
+// TODO add your handling code here:
+    }
+    private void nameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nameFocusLost
+        if(name.getText().length()==0){
+    
+            name.setText("Name");
+            name.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, new Color(179,193,193)));
+            name.setForeground(new Color(179,193,193));
+        }
+// TODO add your handling code here:
+    }//GEN-LAST:event_nameFocusLost
+
+    private void usernameRegistrationFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameRegistrationFocusGained
+        // TODO add your handling code here:
+        Color borderColor = new Color(101,43,215);
+        usernameRegistration.setText("");
+        usernameRegistration.setForeground(borderColor);
+        usernameRegistration.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+    
+    }//GEN-LAST:event_usernameRegistrationFocusGained
+
+    private void usernameRegistrationFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameRegistrationFocusLost
+        // TODO add your handling code here:
+           if(usernameRegistration.getText().length()==0){
+    
+            usernameRegistration.setText("Username");
+            usernameRegistration.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, new Color(179,193,193)));
+            usernameRegistration.setForeground(new Color(179,193,193));
+        }
+    }//GEN-LAST:event_usernameRegistrationFocusLost
+
+    private void emailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusGained
+           Color borderColor = new Color(101,43,215);
+            email.setText("");
+            email.setForeground(borderColor);
+            email.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailFocusGained
+
+    private void emailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusLost
+        if(email.getText().length()==0){
+    
+            email.setText("Email");
+            email.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, new Color(179,193,193)));
+            email.setForeground(new Color(179,193,193));
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_emailFocusLost
+
+    private void password_registartionFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_password_registartionFocusGained
+          Color borderColor = new Color(101,43,215);
+            password_registartion.setText("");
+            password_registartion.setEchoChar('*');
+            password_registartion.setForeground(borderColor);
+            password_registartion.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_password_registartionFocusGained
+
+    private void password_registartionFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_password_registartionFocusLost
+            Color borderColor = new Color(179,193,193);
+            if(password_registartion.getPassword().length == 0){
+            password_registartion.setText("Password");
+            password_registartion.setEchoChar((char)0);
+            password_registartion.setForeground(borderColor);
+            password_registartion.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        // TODO add your handling code here:
+            }
+    }//GEN-LAST:event_password_registartionFocusLost
+
+    private void password_registartionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_registartionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_password_registartionActionPerformed
+    
     /**   
      * @param args the command line arguments
      */
@@ -759,8 +898,8 @@ public class LoginPage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JLabel min;
     private javax.swing.JTextField name;
-    private javax.swing.JTextField password1;
-    private javax.swing.JTextField password_registartion;
+    private javax.swing.JPasswordField password1;
+    private javax.swing.JPasswordField password_registartion;
     private javax.swing.JTextField username1;
     private javax.swing.JTextField usernameRegistration;
     // End of variables declaration//GEN-END:variables
