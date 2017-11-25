@@ -78,6 +78,11 @@ public class PaymentPage extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("CAC Champagne", 0, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(239, 239, 239));
         jLabel1.setText("fodder");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         exit.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         exit.setForeground(new java.awt.Color(239, 239, 239));
@@ -355,17 +360,36 @@ public class PaymentPage extends javax.swing.JFrame {
     }//GEN-LAST:event_debitCardMouseClicked
 
     private void debitCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_debitCardActionPerformed
-        jTextArea1.setText("Used saved Debit Card : \nCard Number: XXXX XXXX XXXX 0514\nAccount Holder's name: " + customer.getName());
+        Random r = new Random(System.currentTimeMillis());
+        int a = r.nextInt(4000);
+        jTextArea1.setText("Used saved Debit Card : \nCard Number: XXXX XXXX XXXX " + a + "\nAccount Holder's name: " + customer.getName());
+        creditCard.setEnabled(false);
+        debitCard.setEnabled(false);
+        cod.setEnabled(false);
     }//GEN-LAST:event_debitCardActionPerformed
 
     private void creditCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creditCardActionPerformed
-        jTextArea1.setText("Used saved Credit Card : \nCard Number: XXXX XXXX XXXX 0514\nAccount Holder's name: " + customer.getName());
+        Random r = new Random(System.currentTimeMillis());
+        int a = r.nextInt(4000);
+        jTextArea1.setText("Used saved Credit Card : \nCard Number: XXXX XXXX XXXX " + a +"\nAccount Holder's name: " + customer.getName());
+        creditCard.setEnabled(false);
+        debitCard.setEnabled(false);
+        cod.setEnabled(false);
     }//GEN-LAST:event_creditCardActionPerformed
 
     private void codActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codActionPerformed
-        jTextArea1.setText("Your order is on it's way.\nAn invoice has been sent to your registered email address.\nEmail: " + customer.getEmail() 
+        jTextArea1.setText("Your order is on it's way.\nAn invoice has been sent to your registered \n email address.\nEmail: " + customer.getEmail() 
                 + "\n\nPlease show it to the delivery boy");
+        creditCard.setEnabled(false);
+        debitCard.setEnabled(false);
+        cod.setEnabled(false);
     }//GEN-LAST:event_codActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+        new menuPage(customer).setVisible(true); 
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments

@@ -47,8 +47,8 @@ public class DatabaseAccess {
         try {
             PreparedStatement insertUser = connect.prepareStatement("INSERT INTO users (USERNAME, EMAIL, PASSWORD) VALUES (?, ?, ?)");
             insertUser.setString(1, username);
-            insertUser.setString(2, password);
-            insertUser.setString(3, email);
+            insertUser.setString(2, email);
+            insertUser.setString(3, password);
             insertUser.executeUpdate();
 
             return new Customer(username, email);

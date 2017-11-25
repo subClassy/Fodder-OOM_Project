@@ -58,7 +58,7 @@ public class menuPage extends javax.swing.JFrame {
         priceLabel4.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, underlineColor));
         quantityLabel4.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, underlineColor));
         borderColor = new Color(101,43,215);
-        FastFoodLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        FastFoodLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor)); 
         this.setLocationRelativeTo(null);
     }
 
@@ -371,6 +371,11 @@ public class menuPage extends javax.swing.JFrame {
         logOut.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logOut.setText("Log Out");
         logOut.setOpaque(true);
+        logOut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logOutMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -1970,6 +1975,21 @@ public class menuPage extends javax.swing.JFrame {
             }
         });
     }//GEN-LAST:event_proceedToPayMouseClicked
+
+    private void logOutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutMouseClicked
+        // TODO add your handling code here:
+        customer = null;
+        this.dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    new LoginPage().setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }//GEN-LAST:event_logOutMouseClicked
 
     /**
      * @param args the command line arguments
