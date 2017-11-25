@@ -5,7 +5,9 @@
  */
 package fodder;
 
-import Backend.*;
+import Backend.Customer;
+import Backend.FoodItem;
+import Backend.Order;
 import CustomErrors.InternalServerException;
 import CustomErrors.UserDoesNotExist;
 import CustomErrors.UsernameExistsException;
@@ -70,7 +72,7 @@ class MotionPanel extends JPanel{
 }
 
 public class LoginPage extends javax.swing.JFrame {
-    DatabaseAccess db = new DatabaseAccess();
+//    DatabaseAccess db = new DatabaseAccess();
     Customer customer;
     /**
      * Creates new form LoginPage
