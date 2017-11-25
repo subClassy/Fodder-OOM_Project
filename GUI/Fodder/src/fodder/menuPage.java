@@ -420,7 +420,7 @@ public class menuPage extends javax.swing.JFrame {
         jLabel7.setBackground(new java.awt.Color(239, 239, 239));
         jLabel7.setFont(new java.awt.Font("Avenir LT Std 65 Medium", 0, 24)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Golden Stir Fried Babycorns");
+		jLabel7.setText("Golden Stir Fried Babycorns");
         jLabel7.setOpaque(true);
 
         jLabel8.setBackground(new java.awt.Color(239, 239, 239));
