@@ -5,7 +5,9 @@
  */
 package fodder;
 
-import Backend.*;
+import Backend.Customer;
+import Backend.FoodItem;
+import Backend.Order;
 import CustomErrors.InternalServerException;
 import CustomErrors.UserDoesNotExist;
 import CustomErrors.UsernameExistsException;
@@ -70,7 +72,7 @@ class MotionPanel extends JPanel{
 }
 
 public class LoginPage extends javax.swing.JFrame {
-    DatabaseAccess db = new DatabaseAccess();
+//    DatabaseAccess db = new DatabaseAccess();
     Customer customer;
     /**
      * Creates new form LoginPage
@@ -567,7 +569,9 @@ public class LoginPage extends javax.swing.JFrame {
 //        try {
 //            customer = db.loginUser(username1.getText(), password1.getText());
 //            System.out.println(customer.getEmail());
-//        } catch (WrongCredentialsException | UserDoesNotExist | InternalServerException e) {
+              password1.setText("");
+              username1.setText("");
+//            } catch (WrongCredentialsException | UserDoesNotExist | InternalServerException e) {
 //            System.out.println(e);
 //        }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -615,10 +619,15 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void jButton3jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3jButton1ActionPerformed
 //        try {
+                
 //            customer = db.registerUser(usernameRegistration.getText(), 
 //                    password_registartion.getText(), email.getText());
 //            System.out.println(customer.getEmail());
-//        } catch (InternalServerException | UsernameExistsException ex) {
+              name.setText("");
+              usernameRegistration.setText("");
+              email.setText("");
+              password_registartion.setText("");
+//            } catch (InternalServerException | UsernameExistsException ex) {
 //            System.out.println(ex);
 //        }
     }//GEN-LAST:event_jButton3jButton1ActionPerformed

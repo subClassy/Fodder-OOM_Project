@@ -486,7 +486,7 @@
                           <Color blue="ef" green="ef" red="ef" type="rgb"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
-                        <Property name="text" type="java.lang.String" value="jLabel6"/>
+                        <Property name="text" type="java.lang.String" value="dosa"/>
                         <Property name="opaque" type="boolean" value="true"/>
                       </Properties>
                     </Component>
@@ -506,7 +506,7 @@
                           <Color blue="ef" green="ef" red="ef" type="rgb"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
-                        <Property name="text" type="java.lang.String" value="jLabel6"/>
+                        <Property name="text" type="java.lang.String" value="kh"/>
                         <Property name="opaque" type="boolean" value="true"/>
                       </Properties>
                     </Component>
