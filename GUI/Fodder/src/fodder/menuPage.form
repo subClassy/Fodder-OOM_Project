@@ -178,7 +178,7 @@
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="520" pref="520" max="-2" attributes="0"/>
-                          <Component id="jLabel68" min="-2" pref="110" max="-2" attributes="0"/>
+                          <Component id="proceedToPay" min="-2" pref="110" max="-2" attributes="0"/>
                       </Group>
                       <Component id="FastFoodLabel" min="-2" pref="101" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
@@ -190,7 +190,7 @@
                           <Component id="GujaratiLabel" min="-2" pref="101" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Component id="jLabel3" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="logOut" min="-2" pref="100" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -198,11 +198,11 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="NorthIndianLabel" min="-2" pref="70" max="-2" attributes="0"/>
               <Component id="SouthIndianLabel" min="-2" pref="70" max="-2" attributes="0"/>
-              <Component id="jLabel68" min="-2" pref="70" max="-2" attributes="0"/>
+              <Component id="proceedToPay" min="-2" pref="70" max="-2" attributes="0"/>
               <Component id="FastFoodLabel" min="-2" pref="70" max="-2" attributes="0"/>
               <Component id="PunjabiLabel" min="-2" pref="70" max="-2" attributes="0"/>
               <Component id="GujaratiLabel" min="-2" pref="70" max="-2" attributes="0"/>
-              <Component id="jLabel3" min="-2" pref="70" max="-2" attributes="0"/>
+              <Component id="logOut" min="-2" pref="70" max="-2" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -211,6 +211,12 @@
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ef" green="ef" red="ef" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Chaparral Pro Light" size="18" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="d7" green="2b" red="65" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Fast Food"/>
@@ -225,6 +231,12 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ef" green="ef" red="ef" type="rgb"/>
             </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Chaparral Pro Light" size="18" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="d7" green="2b" red="65" type="rgb"/>
+            </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="North Indian"/>
             <Property name="opaque" type="boolean" value="true"/>
@@ -237,6 +249,12 @@
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ef" green="ef" red="ef" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Chaparral Pro Light" size="18" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="d7" green="2b" red="65" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="South Indian"/>
@@ -251,6 +269,12 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ef" green="ef" red="ef" type="rgb"/>
             </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Chaparral Pro Light" size="18" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="d7" green="2b" red="65" type="rgb"/>
+            </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Punjabi"/>
             <Property name="opaque" type="boolean" value="true"/>
@@ -263,6 +287,12 @@
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ef" green="ef" red="ef" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Chaparral Pro Light" size="18" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="d7" green="2b" red="65" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Gujarati"/>
@@ -281,17 +311,7 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="GujaratiLabelMouseClicked"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel3">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="ff" red="99" type="rgb"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Log Out"/>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel68">
+        <Component class="javax.swing.JLabel" name="proceedToPay">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="ff" red="99" type="rgb"/>
@@ -301,12 +321,22 @@
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JLabel" name="logOut">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="ff" red="99" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Log Out"/>
+            <Property name="opaque" type="boolean" value="true"/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="menuPanel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="99" green="ff" red="33" type="rgb"/>
+          <Color blue="ef" green="ef" red="ef" type="rgb"/>
         </Property>
       </Properties>
 
@@ -315,7 +345,7 @@
         <Container class="javax.swing.JPanel" name="FastFoodPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="33" green="66" red="ff" type="rgb"/>
+              <Color blue="ef" green="ef" red="ef" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -347,13 +377,18 @@
                           <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
                           <Component id="jPanel4" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="16" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
             <Container class="javax.swing.JPanel" name="jPanel18">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ef" green="ef" red="ef" type="rgb"/>
+                </Property>
+              </Properties>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -383,6 +418,12 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel2">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ef" green="ef" red="ef" type="rgb"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Avenir LT Std 55 Roman" size="18" style="1"/>
+                    </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Menu"/>
                   </Properties>
@@ -390,7 +431,7 @@
                 <Container class="javax.swing.JPanel" name="jPanel5">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="66" type="rgb"/>
+                      <Color blue="ef" green="ef" red="ef" type="rgb"/>
                     </Property>
                   </Properties>
 
@@ -431,6 +472,9 @@
                   <SubComponents>
                     <Component class="javax.swing.JLabel" name="jLabel6">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ef" green="ef" red="ef" type="rgb"/>
+                        </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="text" type="java.lang.String" value="Hakka Noodles"/>
                         <Property name="opaque" type="boolean" value="true"/>
@@ -438,6 +482,9 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel7">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ef" green="ef" red="ef" type="rgb"/>
+                        </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="text" type="java.lang.String" value="jLabel6"/>
                         <Property name="opaque" type="boolean" value="true"/>
@@ -445,6 +492,9 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel8">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ef" green="ef" red="ef" type="rgb"/>
+                        </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="text" type="java.lang.String" value="jLabel6"/>
                         <Property name="opaque" type="boolean" value="true"/>
@@ -452,6 +502,9 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel9">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ef" green="ef" red="ef" type="rgb"/>
+                        </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="text" type="java.lang.String" value="jLabel6"/>
                         <Property name="opaque" type="boolean" value="true"/>
@@ -459,6 +512,9 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel10">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ef" green="ef" red="ef" type="rgb"/>
+                        </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="text" type="java.lang.String" value="jLabel6"/>
                         <Property name="opaque" type="boolean" value="true"/>
@@ -469,6 +525,11 @@
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jPanel3">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ef" green="ef" red="ef" type="rgb"/>
+                </Property>
+              </Properties>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -503,7 +564,7 @@
                 <Container class="javax.swing.JPanel" name="jPanel6">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="66" type="rgb"/>
+                      <Color blue="ef" green="ef" red="ef" type="rgb"/>
                     </Property>
                   </Properties>
 
@@ -582,6 +643,11 @@
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jPanel4">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ef" green="ef" red="ef" type="rgb"/>
+                </Property>
+              </Properties>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -610,7 +676,7 @@
                 <Container class="javax.swing.JPanel" name="jPanel7">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="0" type="rgb"/>
+                      <Color blue="ef" green="ef" red="ef" type="rgb"/>
                     </Property>
                   </Properties>
 

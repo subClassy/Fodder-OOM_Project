@@ -30,6 +30,13 @@ public class menuPage extends javax.swing.JFrame {
     public menuPage() {
         initComponents();
         Color borderColor = new Color(179, 193, 193);
+        NorthIndianLabel.setBorder(BorderFactory.createMatteBorder(0, 2, 2, 0, borderColor));
+        SouthIndianLabel.setBorder(BorderFactory.createMatteBorder(0, 2, 2, 0, borderColor));
+        PunjabiLabel.setBorder(BorderFactory.createMatteBorder(0, 2, 2, 0, borderColor));
+        GujaratiLabel.setBorder(BorderFactory.createMatteBorder(0, 2, 2, 0, borderColor));
+        proceedToPay.setBorder(BorderFactory.createMatteBorder(0, 2, 2, 0, borderColor));
+        logOut.setBorder(BorderFactory.createMatteBorder(0, 2, 2, 0, borderColor));
+        borderColor = new Color(101,43,215);
         FastFoodLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
         this.setLocationRelativeTo(null);
     }
@@ -54,8 +61,8 @@ public class menuPage extends javax.swing.JFrame {
         SouthIndianLabel = new javax.swing.JLabel();
         PunjabiLabel = new javax.swing.JLabel();
         GujaratiLabel = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel68 = new javax.swing.JLabel();
+        proceedToPay = new javax.swing.JLabel();
+        logOut = new javax.swing.JLabel();
         menuPanel = new javax.swing.JPanel();
         FastFoodPanel = new javax.swing.JPanel();
         jPanel18 = new javax.swing.JPanel();
@@ -164,6 +171,8 @@ public class menuPage extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 153));
 
         FastFoodLabel.setBackground(new java.awt.Color(239, 239, 239));
+        FastFoodLabel.setFont(new java.awt.Font("Chaparral Pro Light", 0, 18)); // NOI18N
+        FastFoodLabel.setForeground(new java.awt.Color(101, 43, 215));
         FastFoodLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FastFoodLabel.setText("Fast Food");
         FastFoodLabel.setOpaque(true);
@@ -174,6 +183,8 @@ public class menuPage extends javax.swing.JFrame {
         });
 
         NorthIndianLabel.setBackground(new java.awt.Color(239, 239, 239));
+        NorthIndianLabel.setFont(new java.awt.Font("Chaparral Pro Light", 0, 18)); // NOI18N
+        NorthIndianLabel.setForeground(new java.awt.Color(101, 43, 215));
         NorthIndianLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NorthIndianLabel.setText("North Indian");
         NorthIndianLabel.setOpaque(true);
@@ -184,6 +195,8 @@ public class menuPage extends javax.swing.JFrame {
         });
 
         SouthIndianLabel.setBackground(new java.awt.Color(239, 239, 239));
+        SouthIndianLabel.setFont(new java.awt.Font("Chaparral Pro Light", 0, 18)); // NOI18N
+        SouthIndianLabel.setForeground(new java.awt.Color(101, 43, 215));
         SouthIndianLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SouthIndianLabel.setText("South Indian");
         SouthIndianLabel.setOpaque(true);
@@ -194,6 +207,8 @@ public class menuPage extends javax.swing.JFrame {
         });
 
         PunjabiLabel.setBackground(new java.awt.Color(239, 239, 239));
+        PunjabiLabel.setFont(new java.awt.Font("Chaparral Pro Light", 0, 18)); // NOI18N
+        PunjabiLabel.setForeground(new java.awt.Color(101, 43, 215));
         PunjabiLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PunjabiLabel.setText("Punjabi");
         PunjabiLabel.setOpaque(true);
@@ -204,6 +219,8 @@ public class menuPage extends javax.swing.JFrame {
         });
 
         GujaratiLabel.setBackground(new java.awt.Color(239, 239, 239));
+        GujaratiLabel.setFont(new java.awt.Font("Chaparral Pro Light", 0, 18)); // NOI18N
+        GujaratiLabel.setForeground(new java.awt.Color(101, 43, 215));
         GujaratiLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         GujaratiLabel.setText("Gujarati");
         GujaratiLabel.setMaximumSize(new java.awt.Dimension(26, 16));
@@ -216,15 +233,15 @@ public class menuPage extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setBackground(new java.awt.Color(153, 255, 153));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Log Out");
-        jLabel3.setOpaque(true);
+        proceedToPay.setBackground(new java.awt.Color(153, 255, 153));
+        proceedToPay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        proceedToPay.setText("Proceed to Pay");
+        proceedToPay.setOpaque(true);
 
-        jLabel68.setBackground(new java.awt.Color(153, 255, 153));
-        jLabel68.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel68.setText("Proceed to Pay");
-        jLabel68.setOpaque(true);
+        logOut.setBackground(new java.awt.Color(153, 255, 153));
+        logOut.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logOut.setText("Log Out");
+        logOut.setOpaque(true);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -240,7 +257,7 @@ public class menuPage extends javax.swing.JFrame {
                         .addComponent(SouthIndianLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(520, 520, 520)
-                        .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(proceedToPay, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(FastFoodLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(320, 320, 320)
@@ -248,45 +265,54 @@ public class menuPage extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(420, 420, 420)
                         .addComponent(GujaratiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(logOut, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(NorthIndianLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(SouthIndianLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(proceedToPay, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(FastFoodLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(PunjabiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(GujaratiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(logOut, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        menuPanel.setBackground(new java.awt.Color(51, 255, 153));
+        menuPanel.setBackground(new java.awt.Color(239, 239, 239));
         menuPanel.setLayout(new java.awt.CardLayout());
 
-        FastFoodPanel.setBackground(new java.awt.Color(255, 102, 51));
+        FastFoodPanel.setBackground(new java.awt.Color(239, 239, 239));
 
+        jPanel18.setBackground(new java.awt.Color(239, 239, 239));
+
+        jLabel2.setBackground(new java.awt.Color(239, 239, 239));
+        jLabel2.setFont(new java.awt.Font("Avenir LT Std 55 Roman", 1, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Menu");
 
-        jPanel5.setBackground(new java.awt.Color(102, 255, 255));
+        jPanel5.setBackground(new java.awt.Color(239, 239, 239));
 
+        jLabel6.setBackground(new java.awt.Color(239, 239, 239));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Hakka Noodles");
         jLabel6.setOpaque(true);
 
+        jLabel7.setBackground(new java.awt.Color(239, 239, 239));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("jLabel6");
         jLabel7.setOpaque(true);
 
+        jLabel8.setBackground(new java.awt.Color(239, 239, 239));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("jLabel6");
         jLabel8.setOpaque(true);
 
+        jLabel9.setBackground(new java.awt.Color(239, 239, 239));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("jLabel6");
         jLabel9.setOpaque(true);
 
+        jLabel10.setBackground(new java.awt.Color(239, 239, 239));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("jLabel6");
         jLabel10.setOpaque(true);
@@ -342,10 +368,12 @@ public class menuPage extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jPanel3.setBackground(new java.awt.Color(239, 239, 239));
+
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Price");
 
-        jPanel6.setBackground(new java.awt.Color(102, 255, 255));
+        jPanel6.setBackground(new java.awt.Color(239, 239, 239));
 
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Hakka Noodles");
@@ -417,7 +445,9 @@ public class menuPage extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel7.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel4.setBackground(new java.awt.Color(239, 239, 239));
+
+        jPanel7.setBackground(new java.awt.Color(239, 239, 239));
 
         jSpinner1.setPreferredSize(new java.awt.Dimension(29, 14));
 
@@ -503,7 +533,7 @@ public class menuPage extends javax.swing.JFrame {
                     .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         menuPanel.add(FastFoodPanel, "FastFoodCard");
@@ -533,30 +563,75 @@ public class menuPage extends javax.swing.JFrame {
         // TODO add your handling code here:
         CardLayout cl = (CardLayout)(this.menuPanel.getLayout());
         cl.show(this.menuPanel, "FastFoodCard");
+        Color borderColor = new Color(179, 193, 193);
+        NorthIndianLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        SouthIndianLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        PunjabiLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        GujaratiLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        proceedToPay.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        logOut.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        borderColor = new Color(101,43,215);
+        FastFoodLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
     }//GEN-LAST:event_FastFoodLabelMouseClicked
 
     private void NorthIndianLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NorthIndianLabelMouseClicked
         // TODO add your handling code here:
         CardLayout cl = (CardLayout)(this.menuPanel.getLayout());
         cl.show(this.menuPanel, "NorthIndianCard");
+        Color borderColor = new Color(179, 193, 193);
+        FastFoodLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        SouthIndianLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        PunjabiLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        GujaratiLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        proceedToPay.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        logOut.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        borderColor = new Color(101,43,215);
+        NorthIndianLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
     }//GEN-LAST:event_NorthIndianLabelMouseClicked
 
     private void SouthIndianLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SouthIndianLabelMouseClicked
         // TODO add your handling code here:
         CardLayout cl = (CardLayout)(this.menuPanel.getLayout());
         cl.show(this.menuPanel, "SouthIndianCard");
+        Color borderColor = new Color(179, 193, 193);
+        NorthIndianLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        FastFoodLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        PunjabiLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        GujaratiLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        proceedToPay.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        logOut.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        borderColor = new Color(101,43,215);
+        SouthIndianLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
     }//GEN-LAST:event_SouthIndianLabelMouseClicked
 
     private void PunjabiLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PunjabiLabelMouseClicked
         // TODO add your handling code here:
         CardLayout cl = (CardLayout)(this.menuPanel.getLayout());
         cl.show(this.menuPanel, "PunjabiCard");
+        Color borderColor = new Color(179, 193, 193);
+        NorthIndianLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        SouthIndianLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        FastFoodLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        GujaratiLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        proceedToPay.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        logOut.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        borderColor = new Color(101,43,215);
+        PunjabiLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
     }//GEN-LAST:event_PunjabiLabelMouseClicked
 
     private void GujaratiLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GujaratiLabelMouseClicked
         // TODO add your handling code here:
         CardLayout cl = (CardLayout)(this.menuPanel.getLayout());
         cl.show(this.menuPanel, "GujaratiCard");
+        Color borderColor = new Color(179, 193, 193);
+        NorthIndianLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        SouthIndianLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        PunjabiLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        FastFoodLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        proceedToPay.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        logOut.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
+        borderColor = new Color(101,43,215);
+        GujaratiLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor));
     }//GEN-LAST:event_GujaratiLabelMouseClicked
 
     private void exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseClicked
@@ -630,11 +705,9 @@ public class menuPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -651,7 +724,9 @@ public class menuPage extends javax.swing.JFrame {
     private javax.swing.JSpinner jSpinner3;
     private javax.swing.JSpinner jSpinner4;
     private javax.swing.JSpinner jSpinner5;
+    private javax.swing.JLabel logOut;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JLabel min;
+    private javax.swing.JLabel proceedToPay;
     // End of variables declaration//GEN-END:variables
 }
