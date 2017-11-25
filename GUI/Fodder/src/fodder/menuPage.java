@@ -299,22 +299,22 @@ public class menuPage extends javax.swing.JFrame {
 
         jLabel7.setBackground(new java.awt.Color(239, 239, 239));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("jLabel6");
+        jLabel7.setText("Golden Stir Fried Babycorn");
         jLabel7.setOpaque(true);
 
         jLabel8.setBackground(new java.awt.Color(239, 239, 239));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("jLabel6");
+        jLabel8.setText("Regular Pizza");
         jLabel8.setOpaque(true);
 
         jLabel9.setBackground(new java.awt.Color(239, 239, 239));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("jLabel6");
+        jLabel9.setText("Cheese Chilly");
         jLabel9.setOpaque(true);
 
         jLabel10.setBackground(new java.awt.Color(239, 239, 239));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("jLabel6");
+        jLabel10.setText("Continental Sizzler");
         jLabel10.setOpaque(true);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -376,23 +376,23 @@ public class menuPage extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(239, 239, 239));
 
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("Hakka Noodles");
+        jLabel11.setText("160");
         jLabel11.setOpaque(true);
 
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("Hakka Noodles");
+        jLabel12.setText("180");
         jLabel12.setOpaque(true);
 
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("Hakka Noodles");
+        jLabel13.setText("250");
         jLabel13.setOpaque(true);
 
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Hakka Noodles");
+        jLabel14.setText("250");
         jLabel14.setOpaque(true);
 
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setText("Hakka Noodles");
+        jLabel15.setText("350");
         jLabel15.setOpaque(true);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);

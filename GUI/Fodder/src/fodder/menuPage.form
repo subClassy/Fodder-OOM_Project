@@ -486,7 +486,7 @@
                           <Color blue="ef" green="ef" red="ef" type="rgb"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
-                        <Property name="text" type="java.lang.String" value="jLabel6"/>
+                        <Property name="text" type="java.lang.String" value="Golden Stir Fried Babycorn"/>
                         <Property name="opaque" type="boolean" value="true"/>
                       </Properties>
                     </Component>
@@ -496,7 +496,7 @@
                           <Color blue="ef" green="ef" red="ef" type="rgb"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
-                        <Property name="text" type="java.lang.String" value="jLabel6"/>
+                        <Property name="text" type="java.lang.String" value="Regular Pizza"/>
                         <Property name="opaque" type="boolean" value="true"/>
                       </Properties>
                     </Component>
@@ -506,7 +506,7 @@
                           <Color blue="ef" green="ef" red="ef" type="rgb"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
-                        <Property name="text" type="java.lang.String" value="jLabel6"/>
+                        <Property name="text" type="java.lang.String" value="Cheese Chilly"/>
                         <Property name="opaque" type="boolean" value="true"/>
                       </Properties>
                     </Component>
@@ -516,7 +516,7 @@
                           <Color blue="ef" green="ef" red="ef" type="rgb"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
-                        <Property name="text" type="java.lang.String" value="jLabel6"/>
+                        <Property name="text" type="java.lang.String" value="Continental Sizzler"/>
                         <Property name="opaque" type="boolean" value="true"/>
                       </Properties>
                     </Component>
@@ -606,35 +606,35 @@
                     <Component class="javax.swing.JLabel" name="jLabel11">
                       <Properties>
                         <Property name="horizontalAlignment" type="int" value="0"/>
-                        <Property name="text" type="java.lang.String" value="Hakka Noodles"/>
+                        <Property name="text" type="java.lang.String" value="160"/>
                         <Property name="opaque" type="boolean" value="true"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel12">
                       <Properties>
                         <Property name="horizontalAlignment" type="int" value="0"/>
-                        <Property name="text" type="java.lang.String" value="Hakka Noodles"/>
+                        <Property name="text" type="java.lang.String" value="180"/>
                         <Property name="opaque" type="boolean" value="true"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel13">
                       <Properties>
                         <Property name="horizontalAlignment" type="int" value="0"/>
-                        <Property name="text" type="java.lang.String" value="Hakka Noodles"/>
+                        <Property name="text" type="java.lang.String" value="250"/>
                         <Property name="opaque" type="boolean" value="true"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel14">
                       <Properties>
                         <Property name="horizontalAlignment" type="int" value="0"/>
-                        <Property name="text" type="java.lang.String" value="Hakka Noodles"/>
+                        <Property name="text" type="java.lang.String" value="250"/>
                         <Property name="opaque" type="boolean" value="true"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel15">
                       <Properties>
                         <Property name="horizontalAlignment" type="int" value="0"/>
-                        <Property name="text" type="java.lang.String" value="Hakka Noodles"/>
+                        <Property name="text" type="java.lang.String" value="350"/>
                         <Property name="opaque" type="boolean" value="true"/>
                       </Properties>
                     </Component>
