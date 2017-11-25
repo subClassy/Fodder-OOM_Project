@@ -582,7 +582,7 @@ public class LoginPage extends javax.swing.JFrame {
               password1.setText("");
               username1.setText("");
               this.dispose();
-              new menuPage().setVisible(true);  
+              new menuPage(customer).setVisible(true);  
 //            } catch (WrongCredentialsException | UserDoesNotExist | InternalServerException e) {
 //            System.out.println(e);
 //        }

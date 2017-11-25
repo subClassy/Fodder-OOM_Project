@@ -49,6 +49,11 @@ public class Customer {
     }
 
     public double getTaxedPrice() {
-        return ((double) getTotalPrice() + (0.18 * getTotalPrice()));
+        int totalPrice = getTotalPrice();
+        return ((double) totalPrice + (0.18 * totalPrice));
+    }
+    
+    public double getTax() {
+        return 0.18 * getTotalPrice();
     }
 }

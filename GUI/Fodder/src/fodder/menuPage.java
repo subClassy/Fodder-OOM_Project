@@ -5,10 +5,13 @@
  */
 package fodder;
 
+import Backend.Customer;
+import Backend.FoodItem;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
@@ -23,11 +26,13 @@ import javax.swing.Timer;
  */
 
 public class menuPage extends javax.swing.JFrame {
+    Customer customer;
 
     /**
      * Creates new form menuPage
      */
-    public menuPage() {
+    public menuPage(Customer customer) {
+        this.customer = customer;
         initComponents();
         Color borderColor = new Color(179, 193, 193);
         NorthIndianLabel.setBorder(BorderFactory.createMatteBorder(0, 2, 2, 0, borderColor));
@@ -354,6 +359,11 @@ public class menuPage extends javax.swing.JFrame {
         proceedToPay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         proceedToPay.setText("Proceed to Pay");
         proceedToPay.setOpaque(true);
+        proceedToPay.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                proceedToPayMouseClicked(evt);
+            }
+        });
 
         logOut.setBackground(new java.awt.Color(255, 51, 51));
         logOut.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
@@ -420,7 +430,7 @@ public class menuPage extends javax.swing.JFrame {
         jLabel7.setBackground(new java.awt.Color(239, 239, 239));
         jLabel7.setFont(new java.awt.Font("Avenir LT Std 65 Medium", 0, 24)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel7.setText("Golden Stir Fried Babycorns");
+        jLabel7.setText("Golden Stir Fried Babycorns");
         jLabel7.setOpaque(true);
 
         jLabel8.setBackground(new java.awt.Color(239, 239, 239));
@@ -1924,6 +1934,45 @@ public class menuPage extends javax.swing.JFrame {
         this.setState(JFrame.ICONIFIED);
     }//GEN-LAST:event_minMouseClicked
 
+    private void proceedToPayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_proceedToPayMouseClicked
+        ArrayList<Integer> cart = new ArrayList<>();
+        cart.add((Integer) jSpinner1.getValue());
+        cart.add((Integer) jSpinner2.getValue());
+        cart.add((Integer) jSpinner3.getValue());
+        cart.add((Integer) jSpinner4.getValue());
+        cart.add((Integer) jSpinner5.getValue());
+        cart.add((Integer) jSpinner6.getValue());
+        cart.add((Integer) jSpinner7.getValue());
+        cart.add((Integer) jSpinner8.getValue());
+        cart.add((Integer) jSpinner9.getValue());
+        cart.add((Integer) jSpinner10.getValue());
+        cart.add((Integer) jSpinner11.getValue());
+        cart.add((Integer) jSpinner12.getValue());
+        cart.add((Integer) jSpinner13.getValue());
+        cart.add((Integer) jSpinner14.getValue());
+        cart.add((Integer) jSpinner15.getValue());
+        cart.add((Integer) jSpinner16.getValue());
+        cart.add((Integer) jSpinner17.getValue());
+        cart.add((Integer) jSpinner18.getValue());
+        cart.add((Integer) jSpinner19.getValue());
+        cart.add((Integer) jSpinner20.getValue());
+        cart.add((Integer) jSpinner21.getValue());
+        cart.add((Integer) jSpinner22.getValue());
+        cart.add((Integer) jSpinner23.getValue());
+        cart.add((Integer) jSpinner24.getValue());
+        cart.add((Integer) jSpinner25.getValue());
+        
+        customer.updateCart(cart);
+        
+        System.out.println(customer.getTotalPrice());
+        System.out.println(customer.getTax());
+        System.out.println(customer.getTaxedPrice());
+        
+        for (FoodItem item : customer.getCart()) {
+            System.out.println(item.getName() + " " + item.getPrice() + " " + item.getQuantity());
+        }
+    }//GEN-LAST:event_proceedToPayMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1953,7 +2002,7 @@ public class menuPage extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new menuPage().setVisible(true);
+                new menuPage(new Customer("test", "test")).setVisible(true);
             }
         });
     }
