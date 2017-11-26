@@ -9,6 +9,7 @@ import Backend.Customer;
 import Backend.FoodItem;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Toolkit;
 import java.util.Random;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -26,6 +27,7 @@ public class PaymentPage extends javax.swing.JFrame {
     public PaymentPage(Customer customer) {
         this.customer = customer;
         initComponents();
+        logoSetup();
         this.setLocationRelativeTo(null);
         
         jTextArea1.append("\t          Order\n");
@@ -43,7 +45,10 @@ public class PaymentPage extends javax.swing.JFrame {
         jTextArea1.append("\n\nPrice\n\nTotal Price : Rs." + customer.getTotalPrice() 
                 + "\nTax (GST 18%) : Rs." + customer.getTax() + "\nTotal Amount : Rs." + customer.getTaxedPrice());
     }
-
+    
+    private void logoSetup() {
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("logo.png")));
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -77,6 +82,7 @@ public class PaymentPage extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("CAC Champagne", 0, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(239, 239, 239));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fodder/logo-small.png"))); // NOI18N
         jLabel1.setText("fodder");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -129,17 +135,19 @@ public class PaymentPage extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(min)
-                .addGap(18, 18, 18)
-                .addComponent(exit)
-                .addGap(20, 20, 20))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(MotionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(min)
+                        .addGap(18, 18, 18)
+                        .addComponent(exit)
+                        .addGap(20, 20, 20))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(MotionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -9,6 +9,7 @@ import Backend.Customer;
 import Backend.FoodItem;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -34,6 +35,7 @@ public class menuPage extends javax.swing.JFrame {
     public menuPage(Customer customer) {
         this.customer = customer;
         initComponents();
+        logoSetup();
         Color borderColor = new Color(179, 193, 193);
         NorthIndianLabel.setBorder(BorderFactory.createMatteBorder(0, 2, 2, 0, borderColor));
         SouthIndianLabel.setBorder(BorderFactory.createMatteBorder(0, 2, 2, 0, borderColor));
@@ -61,7 +63,10 @@ public class menuPage extends javax.swing.JFrame {
         FastFoodLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, borderColor)); 
         this.setLocationRelativeTo(null);
     }
-
+    
+    private void logoSetup() {
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("logo.png")));
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -218,6 +223,7 @@ public class menuPage extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("CAC Champagne", 0, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(239, 239, 239));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fodder/logo-small.png"))); // NOI18N
         jLabel1.setText("fodder");
 
         exit.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -265,17 +271,19 @@ public class menuPage extends javax.swing.JFrame {
         jPanel33Layout.setHorizontalGroup(
             jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel33Layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 523, Short.MAX_VALUE)
-                .addComponent(min)
-                .addGap(18, 18, 18)
-                .addComponent(exit)
-                .addGap(20, 20, 20))
-            .addGroup(jPanel33Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(MotionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel33Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 474, Short.MAX_VALUE)
+                        .addComponent(min)
+                        .addGap(18, 18, 18)
+                        .addComponent(exit)
+                        .addGap(20, 20, 20))
+                    .addGroup(jPanel33Layout.createSequentialGroup()
+                        .addComponent(MotionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         jPanel33Layout.setVerticalGroup(
             jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
