@@ -24,9 +24,9 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel33" min="-2" max="-2" attributes="0"/>
           <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
           <Component id="menuPanel" min="-2" pref="730" max="-2" attributes="0"/>
+          <Component id="jPanel33" alignment="0" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -58,7 +58,7 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" pref="162" max="-2" attributes="0"/>
-                          <EmptySpace pref="474" max="32767" attributes="0"/>
+                          <EmptySpace pref="483" max="32767" attributes="0"/>
                           <Component id="min" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="exit" min="-2" max="-2" attributes="0"/>
@@ -540,7 +540,7 @@
                           <Font name="Avenir LT Std 65 Medium" size="24" style="0"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
-                        <Property name="text" type="java.lang.String" value="Cheese Chilly"/>
+                        <Property name="text" type="java.lang.String" value="Chicken Masala"/>
                         <Property name="opaque" type="boolean" value="true"/>
                       </Properties>
                     </Component>

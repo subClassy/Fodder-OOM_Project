@@ -885,6 +885,12 @@ public class LoginPage extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
+                    try{
+                        Thread.sleep(5000);
+                    }
+                    catch(Exception e){
+                        
+                    }
                     new LoginPage().setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();

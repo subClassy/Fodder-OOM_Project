@@ -8,7 +8,7 @@ public class Order {
         orderList = new ArrayList<FoodItem>();
         orderList.add(new FastFood("Hakka Noodles", 160));
         orderList.add(new FastFood("Golden Stir Fried Babycorn", 180));
-        orderList.add(new FastFood("Cheese Chilly", 250));
+        orderList.add(new FastFood("Chicken Masala", 250));
         orderList.add(new FastFood("Regular Pizza", 250));
         orderList.add(new FastFood("Continental Sizzler", 350));
         orderList.add(new NorthIndianFood("Chicken Butter Masala", 320));
